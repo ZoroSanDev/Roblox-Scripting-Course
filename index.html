@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Scripting Course</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/monokai-sublime.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        h2 {
+            margin-top: 30px;
+        }
+
+        p, ol, ul, pre, code {
+            color: #555;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow: auto;
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+        }
+
+        strong {
+            font-weight: 900; /* Set font-weight to 900 for extra boldness */
+            font-size: 1.2em; /* Set font-size to 1.2 times the default size */
+            color: #000;
+        }
+
+        ol, ul {
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        em {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Hello and Welcome to My Roblox Scripting Course</h1>
+
+<p>In this course, we will explore the fundamentals of scripting, designed to provide a solid foundation, drawing from my own learning experiences.</p>
+
+<p>I am committed to presenting complex concepts in a straightforward manner, ensuring a clear understanding while delving into the intricacies of scripting with you.</p>
+
+<h2>Understanding Basic Data Types</h2>
+
+<p>Data types represent different forms of information. Consider the following example:</p>
+
+<p><strong>What color is an apple?</strong></p>
+<ol>
+    <li><strong>Blue</strong></li>
+    <li><strong>Purple</strong></li>
+    <li><strong>Red</strong></li>
+    <li><strong>Black</strong></li>
+</ol>
+
+<p>For this question, a text-based response is required, such as "<strong>Red</strong>".</p>
+
+<p>On the other hand, some questions may demand a numerical response:</p>
+
+<p><strong>4 + 5 = ?</strong></p>
+<ol>
+    <li><strong>8</strong></li>
+    <li><strong>1</strong></li>
+    <li><strong>6</strong></li>
+    <li><strong>9</strong></li>
+</ol>
+
+<p>Here, a numerical answer is expected, not text.</p>
+
+<p>These examples highlight the diverse use of data types in our daily activities.</p>
+
+<h2>Primitive Data Types in Roblox</h2>
+
+<p>Roblox recognizes four primitive data types:</p>
+<ol>
+    <li><strong>nil</strong> - no value</li>
+    <li><strong>boolean</strong> - true / false</li>
+    <li><strong>number</strong> - a numeric value</li>
+    <li><strong>string</strong> - text</li>
+</ol>
+
+<p>In programming, variables store these data types. Think of variables as you would in mathematics, where "x" represents a number:</p>
+
+<pre><code>local x = 16 - 7
+local x = 9
+</code></pre>
+
+<p>Here, the letter "x" stores the number 9.</p>
+
+<p>When storing a data type in a variable in Roblox, you must declare it. The process is simple:</p>
+
+<ol>
+    <li><strong>Declare the variable as a local variable</strong></li>
+    <li><strong>Assign a name to the variable</strong> (similar to "x," but choose a name that reflects the stored value)</li>
+    <li><strong>Assign a value to the variable</strong></li>
+</ol>
+
+<p>Now that we understand variable declaration, let's explore basic operations.</p>
+
+<h2>Basic Operations with Data Types</h2>
+
+<p>It's essential to recognize that different data types have different methods.</p>
+
+<p>With a <strong>number</strong> data type, we can perform calculations:</p>
+
+<pre><code>local x = 5
+local n = 10
+local sum = x + n
+local mult = x * n
+local div = n / x
+local pow = x^2
+
+print(sum) -- 15
+print(mult) -- 50
+print(div) -- 2
+print(pow) -- 25
+</code></pre>
+
+<p>With a <strong>string</strong> variable, we can concatenate strings:</p>
+
+<pre><code>local text1 = "Hello, "
+local text2 = "how are you?"
+local multiLineText = [[Multi
+Line
+String]]
+
+local sentence = text1 .. text2
+
+print(sentence) -- Hello, how are you?
+print(multiLineText) -- Multi
+-- -------------------- Line
+-- -------------------- String
+</code></pre>
+
+<p><strong>Boolean</strong> and <strong>nil</strong> data types have fewer options:</p>
+
+<pre><code>local boolean = true
+local nilValue = nil
+
+print(boolean) -- true
+print(nilValue) -- nil
+
+boolean = not boolean -- true becomes false
+print(boolean) -- false
+boolean = not boolean -- false becomes true
+print(boolean) -- true
+</code></pre>
+
+<pre><code>true
+nil
+false
+true
+</code></pre>
+
+<h2>Additional Insights (To Be Covered Later, After Teaching Functions)</h2>
+
+<ol>
+    <li><strong>Understanding Variables</strong></li>
+</ol>
+
+<p>Variables can have global or local scopes. They have global scope by default, but it's almost always better to create them with local scope because Luau accesses local variables faster than global ones. To give a variable local scope, put the keyword local before a variable's name when you assign a value to it.</p>
+
+<p>A local variable is accessible only in the block where it’s declared. A (non-local variable) is visible to all scopes of a script.. Consider the following example:</p>
+
+<pre><code>function printX()
+    print(x)
+end
+
+local x = 5
+printX()
+</code></pre>
+
+<p><strong>This code will print nil.</strong> (Because x is not defined before the function)</p>
+
+<p>Conversely, the following code will work:</p>
+
+<pre><code>function printX()
+    print(x)
+end
+
+x = 5
+printX()
+</code></pre>
+
+<p>When a variable is not defined as local, it becomes global. Even if a function is written before the declaration, as long as it runs after setting a value, the function will obtain the value of the variable.</p>
+
+<h2>Local vs Global</h2>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.js" integrity="sha512-5z46/9/EsCZ0zC1onKtqLDWz0b79v8V5eTDSEubf4KmFmCuCP7tTPt6Hc1tw3noP1B7fmJcjpbvCl3e9p6qRuKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-lua.min.js" integrity="sha512-QgKGbBNO02/vvbQx4WeiyXgWyZ7lMXudRmEwPnTS0nXj5BlDS8dZbYkC0yOQnuw9Bxou9ySYuyMn8a8ysvs+yQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+</html>
